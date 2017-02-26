@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Joris Pellereau</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div id="background">
+      <img class="active" src="chaton1.jpg"/>
+      <img class="hidden" src="chaton2.jpg"/>
+      <img class="hidden" src="chaton3.jpg"/>
+      <img class="hidden" src="chaton4.jpg"/>
+    </div>
+    <div id="main">
+      <div id="header">
+        <ul>
+          <li class="onglet" data-id="part1">
+            Informations
+          </li>
+          <li class="onglet" data-id="part2">
+            Projets
+          </li>
+          <li class="onglet" data-id="part3">
+            Divers
+          </li>
+          <li class="onglet" data-id="part4">
+            Passions
+          </li>
+        </ul>
+      </div>
+      <div id="body">
+        <div id="part1" class="">
+          <H1>Informations me concernant</H1>
+        	<LI><A href = "https://github.com/JorisPellereau" title = "GitHub JorisPELLEREAU" target = "_blank">Mon GitHub</A>
+        </div>
+        <div id="part2" class="hidden">
+          <H1>Projets personnels</H1>
+        	<LI>TTT
+        	<LI>TTTT
+        </div>
+        <div id="part3" class="hidden">
+          <H1>Informations diverses</H1>
+        </div>
+        <div id="part4" class="hidden">
+          <h1>Mes passions</h1>
+          <p>
+            Les chats.
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+        <p>
+          Footer
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function setOnglet(selectedItem, menuClass = "onglet") {
+        var menuOnglets = document.getElementsByClassName(menuClass);
+        for (var i = 0; i < menuOnglets.length; ++i) {
+          menuOnglets[i].addEventListener("click", function() {
+            var idOnglet = this.getAttribute("data-id");
+            var onglet = document.getElementById(idOnglet);
+            selectedItem.className = "hidden";
+            onglet.className = "";
+            selectedItem = onglet;
+          });
+        }
+      }
+      setOnglet(document.getElementById("part1"));
+
+      // background
+      setInterval(function() {
+        var background = document.getElementById("background");
+        var image = background.getElementsByClassName("active")[0];
+        var next = image.nextElementSibling;
+        if (next == null) {
+          next = background.firstElementChild;
+        }
+        next.className = "active";
+        image.className = "hidden";
+      }, 2000);
+
+    </script>
+
+  </body>
+</html>
