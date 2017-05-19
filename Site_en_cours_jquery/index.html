@@ -1,0 +1,166 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Joris Pellereau</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div id="main">
+
+		<div id="TOPBAND">
+			WHITE TOP BAND
+		</div>
+
+      <div id="header">
+        <ul>
+          <li class="onglet" data-id="part1">
+            Informations
+          </li>
+          <li class="onglet" data-id="part2">
+            Projets
+          </li>
+          <li class="onglet" data-id="part3">
+            Divers
+          </li>
+          <li class="onglet" data-id="part4">
+            Passions
+          </li>
+        </ul>
+      </div>
+
+
+      <div id="body">
+        <div id="part1" class="">
+			<div id = "gauche">
+					<UL>
+						<LI><A href = "https://github.com/JorisPellereau" title = "GitHub JorisPELLEREAU" target = "_blank">Mon GitHub</A>
+						<LI><A href = "PELLEREAU_Joris_CV.pdf" title = "CV_PELLEREAU_Joris" target = "_blank">Mon CV</A>
+						<LI><A href = "http://linkedin.com" title = "Lkdn" target = "_blank">Mon LinkedIn</A>
+					</UL>
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+        <div id="part2" class="hidden">
+				<div id = "gauche">
+					<UL>
+						<LI class="ongletProjet" data-id="proj_perso">Projets personnels</li>
+							<UL>
+								<LI>Programmateur d'Atmega
+								<LI>Programmation de micro-contrôleur Picaxe
+								<LI>Restauration de Flipper
+							</UL>
+						<LI class="ongletProjet" data-id="proj_univ">Projets universitaire</li>
+							<UL>
+								<LI>Instrumentation d'un capteur de radiation pour nanosatellite
+								<LI>Implémentation d'un micro-contrôleur 4 bits sur FPGA
+								<LI>Commande d'un ascenseur par machine à état en VHDL
+								<LI>Sérrure sécurisé technologie RFID
+							</UL>
+					</UL>
+				</div>
+				<div id = "droite">
+					<div class = "active" data-id = "droite_body1" id = "proj_perso" >
+						<H1>Programmateur d'Atmega</H1>
+						<div>
+							 <P><U>Objectif du projet:</U> concevoir un programmateur universelle de micro-contrôleur Atmega à partir d'une carte Raspberry Pi</P>
+							 </P>lll</P>
+						</div>
+					</div>
+					<div class = "hidden" data-id = "droite_body2" id = "proj_univ" >
+              <p>
+                proj_univ
+              </p>
+					</div>
+				</div>
+
+
+
+		<!--
+          <H1>Projets personnels</H1>
+        	<LI>Programmateur d'Atmega
+        	<LI>Programmation de micro-contrôleur Picaxe
+			<LI>Restauration de Flipper
+		  <H1>Projets universitaire</H1>
+			<LI>Instrumentation d'un capteur de radiation pour nanosatellite
+        	<LI>Implémentation d'un micro-contrôleur 4 bits sur FPGA
+			<LI>Commande d'un ascenseur par machine à état en VHDL
+			<LI>Sérrure sécurisé technologie RFID
+
+			-->
+
+
+
+        </div>
+        <div id="part3" class="hidden">
+			<div id = "gauche">
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+        <div id="part4" class="hidden">
+			<div id = "gauche">
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+      </div>
+
+      <div id="footer">
+
+		  <P>________________________________________________________________________________________________________</P>
+		  <P>© Joris PELLEREAU</P>
+
+	  <!--
+        <p align = "center">
+          <A href = "http://master-eea.univ-tlse3.fr/" title = "EEA Toulouse" target = "_blank"><img  src="EEA.png" height = "100"/></A>
+		  <img  src="joris.png" height = "100"/>
+		  <img  src="ESET.png" height = "100"/>
+        </p>
+		-->
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      //
+      // gestion des onglets dans le header
+      //
+
+      //Match de l'évenement click
+      $("#header li.onglet").click(function() {
+        // On cache le contenu de tous les onglets
+        $("#header li.onglet").each(function() {
+          var dataid = $(this).attr("data-id");
+          $("#" + dataid).hide();
+        });
+        // On affiche le contenu de l'onglet cliqué
+        var dataid = $(this).attr("data-id");
+        $("#" + dataid).show();
+      });
+
+
+      //
+      // gestion des onglets dans les projet
+      //
+
+      //Match de l'évenement click
+      $("li.ongletProjet").click(function() {
+        // On cache le contenu de tous les onglets
+        $("li.ongletProjet").each(function() {
+          var dataid = $(this).attr("data-id");
+          $("#" + dataid).hide();
+        });
+        // On affiche le contenu de l'onglet cliqué
+        var dataid = $(this).attr("data-id");
+        $("#" + dataid).show();
+      });
+    </script>
+
+
+  </body>
+</html>
