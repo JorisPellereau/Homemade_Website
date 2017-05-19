@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Joris Pellereau</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    
+    <div id="main">
+	
+		<div id="TOPBAND">
+			WHITE TOP BAND 
+		</div>
+		
+      <div id="header">
+        <ul>
+          <li class="onglet" data-id="part1">
+            Informations
+          </li>
+          <li class="onglet" data-id="part2">
+            Projets
+          </li>
+          <li class="onglet" data-id="part3">
+            Divers
+          </li>
+          <li class="onglet" data-id="part4">
+            Passions
+          </li>
+        </ul>
+      </div>
+	  
+	  
+      <div id="body">
+        <div id="part1" class="">
+			<div id = "gauche">
+					<UL>
+						<LI><A href = "https://github.com/JorisPellereau" title = "GitHub JorisPELLEREAU" target = "_blank">Mon GitHub</A>
+						<LI><A href = "PELLEREAU_Joris_CV.pdf" title = "CV_PELLEREAU_Joris" target = "_blank">Mon CV</A>
+						<LI><A href = "http://linkedin.com" title = "Lkdn" target = "_blank">Mon LinkedIn</A>
+					</UL>
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+        <div id="part2" class="hidden">
+				<div id = "gauche">
+					<UL>
+						<LI><A href = "" onclick= "f1(id)" id = "LI_proj_perso">Projets personnels</A>
+							<UL>
+								<LI>Programmateur d'Atmega
+								<LI>Programmation de micro-contrôleur Picaxe
+								<LI>Restauration de Flipper
+							</UL>
+						<LI><A href = "" onclick= "f1(id)" id = "LI_proj_univ">Projets universitaire</A>
+							<UL>
+								<LI>Instrumentation d'un capteur de radiation pour nanosatellite
+								<LI>Implémentation d'un micro-contrôleur 4 bits sur FPGA
+								<LI>Commande d'un ascenseur par machine à état en VHDL
+								<LI>Sérrure sécurisé technologie RFID
+							</UL>
+					</UL>
+				</div>
+				<div id = "droite">
+					<div class = "active" data-id = "droite_body1" id = "proj_perso" >
+						<H1>Programmateur d'Atmega</H1>
+						<div>
+							 <P><U>Objectif du projet:</U> concevoir un programmateur universelle de micro-contrôleur Atmega à partir d'une carte Raspberry Pi</P>
+							 </P>lll</P>
+						</div>
+					</div>
+					<div class = "hidden" data-id = "droite_body2" id = "proj_univ" >
+						
+					</div>
+				</div>
+		
+		
+		
+		<!--
+          <H1>Projets personnels</H1>
+        	<LI>Programmateur d'Atmega
+        	<LI>Programmation de micro-contrôleur Picaxe
+			<LI>Restauration de Flipper
+		  <H1>Projets universitaire</H1>
+			<LI>Instrumentation d'un capteur de radiation pour nanosatellite
+        	<LI>Implémentation d'un micro-contrôleur 4 bits sur FPGA
+			<LI>Commande d'un ascenseur par machine à état en VHDL
+			<LI>Sérrure sécurisé technologie RFID
+			
+			-->
+			
+			
+			
+        </div>
+        <div id="part3" class="hidden">
+			<div id = "gauche">
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+        <div id="part4" class="hidden">
+			<div id = "gauche">
+			</div>
+			<div id = "droite">
+			</div>
+        </div>
+      </div>
+	  
+      <div id="footer">
+	  
+		  <P>________________________________________________________________________________________________________</P>
+		  <P>© Joris PELLEREAU</P>
+		  
+	  <!--
+        <p align = "center">
+          <A href = "http://master-eea.univ-tlse3.fr/" title = "EEA Toulouse" target = "_blank"><img  src="EEA.png" height = "100"/></A>
+		  <img  src="joris.png" height = "100"/>
+		  <img  src="ESET.png" height = "100"/>
+        </p>
+		-->
+      </div>
+    </div>
+
+    <script>
+      function setOnglet(selectedItem, menuClass = "onglet") {
+        var menuOnglets = document.getElementsByClassName(menuClass);
+        for (var i = 0; i < menuOnglets.length; ++i) {
+          menuOnglets[i].addEventListener("click", function() {
+            var idOnglet = this.getAttribute("data-id");
+            var onglet = document.getElementById(idOnglet);
+            selectedItem.className = "hidden";
+            onglet.className = "";
+            selectedItem = onglet;
+          });
+        }
+      }
+      setOnglet(document.getElementById("part1"));
+
+      // background
+     // setInterval(function() {
+       // var background = document.getElementById("background");
+       // var image = background.getElementsByClassName("active")[0];
+       // var next = image.nextElementSibling;
+      //  if (next == null) {
+       //   next = background.firstElementChild;
+       // }
+       // next.className = "active";
+       // image.className = "hidden";
+      //}, 10000 );
+
+    </script>
+	
+	
+	<SCRIPT type="text/javascript" >				  			
+			
+			function f1(id)
+			{								
+				if(id == LI_proj_perso) {
+					proj_perso.className = "active";
+					proj_univ.className = "hidden";
+				}
+				else if(id == LI_proj_univ) {
+					proj_perso.className = "hidden";
+					proj_univ.className = "active";
+				}
+				else				
+				//alert(id);
+			       
+			}
+	</SCRIPT>
+		
+
+  </body>
+</html>
